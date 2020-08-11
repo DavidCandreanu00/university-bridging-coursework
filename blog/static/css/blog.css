@@ -1,0 +1,73 @@
+h1 a, h2 a {
+    font-family: 'Recursive';
+}
+
+#website_title {
+	font-family: 'Recursive';
+	text-align: center; 
+}
+
+body {
+    background: repeating-linear-gradient( -45deg, #0c0c0c 0px, #0c0c0c 5px, #121212 6px, #121212 11px, #0c0c0c 12px);
+}
+
+.date {
+	color: #03DAC6;
+	font-family: 'Open Sans';
+}
+
+p {
+	color: #FFFFFF;
+	font-family: 'Open Sans';
+}
+
+.page-header {
+    background-color: #0c0c0c;
+    margin-top: 0;
+    padding: 10px 0px 20px 0px;
+    text-align: center;
+    border-style: none;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+	color: #BB86FC;
+    font-size: 30pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #BB86FC;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.post h2 a, .post h2 a:visited .post h2 a:active{
+    color: #BB86FC;
+}
+
+#detail_title_active {
+	color: #BB86FC;
+	font-family: 'Recursive';
+}
+
+
+/* Title animation -------------------------------*/ 
+
