@@ -2,18 +2,17 @@ h1 a, h2 a {
     font-family: 'Recursive';
 }
 
-#website_title {
+#website-title {
 	font-family: 'Recursive';
-	text-align: center; 
+    font-size: 35pt;
+    float: left;
+    margin-left: 60px;
 }
+    
 
 .form_title{
 	font-family: 'Recursive';
 	color: #03DAC6;
-}
-
-.top-menu {
-	margin-top: 20px;
 }
 
 body {
@@ -33,9 +32,9 @@ body {
 .page-header {
     background-color: #0c0c0c;
     margin-top: 0;
-    padding: 10px 0px 20px 0px;
-    text-align: center;
+    padding: 10px 0px 80px 0px;
     border-style: none;
+    text-align: center;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -44,8 +43,9 @@ body {
     text-decoration: none;
 }
 
-.content {
-    margin-left: 40px;
+.content-container {
+    margin-left: 25%;
+    margin-right: 0%;
 
 }
 
@@ -59,9 +59,22 @@ body {
 
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #BB86FC;
-    float: right;
-    font-size: 26pt;
+    font-size: 16pt;
     margin-right: 20px;
+    margin-top: 20px;
+}
+
+#edit-button, #add-post-button, #lock-item{
+    margin-top: 20px;
+    font-size: 26pt;
+    float: right;
+    margin-right: 60px;
+}
+
+#user-details{
+    float:right;
+    margin-right: 60px;
+    font-size: 20pt;
 }
 
 .post {
@@ -76,6 +89,12 @@ body {
 #detail_title_active {
 	color: #BB86FC;
 	font-family: 'Recursive';
+}
+
+#buton-edit, #buton-remove {
+    background-color: #BB86FC;
+    margin-top: 15px;
+    margin-right: 15px;
 }
 
 
