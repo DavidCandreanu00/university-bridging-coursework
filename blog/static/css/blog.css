@@ -140,7 +140,7 @@ body {
 
 
 
-#edit-button, #add-post-button, #lock-item, #home-button{
+#edit-button, #add-post-button, #lock-item, #home-button, .blog-icon{
     margin-top: 25px;
     font-size: 26pt;
     float: right;
@@ -217,11 +217,16 @@ body {
 
 .aboutme-image{
 
-    max-width: 40%;   
+    max-width: 35%;   
     height: auto;
     margin-bottom: 10%;
     padding-top: 5%;
 
+}
+
+.blog-icon{
+    max-width: 40px;
+    height: 40px;
 }
 /* Title animation -------------------------------*/ 
 

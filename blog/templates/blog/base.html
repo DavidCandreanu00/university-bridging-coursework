@@ -25,6 +25,8 @@
 
         <a href="/" class="top-menu" id="home-button"><span class="glyphicon glyphicon-home"></span></a>
 
+        <a href="{% url 'post_list' %}" class="top-menu" id="blog-button"><img src="{% static "img/blogicon.png" %}" class="blog-icon" alt="Blog icon"></a>
+
         {% if user.is_authenticated %}
 
             <a href="{% url 'post_new' %}" class="top-menu" id="add-post-button"><span class="glyphicon glyphicon-plus"></span></a>
