@@ -96,10 +96,13 @@ body {
 }
 
 .content-container {
-    text-align: center;
     margin-left: 25%;
     margin-top: 150px;
 
+}
+
+.image-div{
+    text-align: center;
 }
 
 .save {
