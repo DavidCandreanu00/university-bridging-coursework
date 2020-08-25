@@ -1,0 +1,134 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+	<img src="{% static "img/aboutme.png" %}" class="aboutme-image" alt="David Candreanu bitmoji">
+    
+
+<div class="animation-container">
+  <h1>David Candreanu |
+    <!-- The words that we want to have typerwriter effect -->
+    <span class="txt-type" data-wait="3000" data-words='["University of Birmingham", "Computer Science", "Vodafone Apprentice"]'></span>
+  </h1>
+</div>
+<style>
+/* CSS RESET */
+
+/* ALIGN CONTENT */
+.animation-container {
+  display: flex;
+  font-family: 'Recursive';
+  color: #03DAC6;
+  min-height: 120px;
+  text-align: left;
+}
+/* ADD CURSOR */
+.txt-type > .txt {
+  border-right: 0.08rem solid #fff;
+  padding-right: 2px;
+  /* Animating the cursor */
+  animation: blink 0.6s infinite;
+}
+
+/* ANIMATION */
+@keyframes blink {
+  0% {
+    border-right: 0.08rem solid rgba(255, 255, 255, 1);
+  }
+  100% {
+    border-right: 0.08rem solid rgba(255, 255, 255, 0.2);
+  }
+}
+  #page .section-background {background: white;}
+  #page section * {color: black !important;}
+  #page .content {
+    width: 100%;
+}
+</style>
+<script>
+class TypeWriter {
+  constructor(txtElement, words, wait = 3000) {
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = "";
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
+    this.isDeleting = false;
+  }
+
+  type() {
+    // Current index of word
+    const current = this.wordIndex % this.words.length;
+    // Get full text of current word
+    const fullTxt = this.words[current];
+
+    // Check if deleting
+    if (this.isDeleting) {
+      // Remove characters
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      // Add charaters
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    // Insert txt into element
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // Initial Type Speed
+    let typeSpeed = 50;
+
+    if (this.isDeleting) {
+      // Increase speed by half when deleting
+      typeSpeed /= 2;
+    }
+
+    // If word is complete
+    if (!this.isDeleting && this.txt === fullTxt) {
+      // Make pause at end
+      typeSpeed = this.wait;
+      // Set delete to true
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      // Move to next word
+      this.wordIndex++;
+      // Pause before start typing
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+// Init On DOM Load
+document.addEventListener("DOMContentLoaded", init);
+
+// Init App
+function init() {
+  const txtElement = document.querySelector(".txt-type");
+  const words = JSON.parse(txtElement.getAttribute("data-words"));
+  const wait = txtElement.getAttribute("data-wait");
+  // Init TypeWriter
+  new TypeWriter(txtElement, words, wait);
+}
+
+</script>
+
+
+
+
+
+
+    <div>
+    <p class="about-me-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel semper ipsum. Aliquam erat volutpat. Donec tristique, neque at posuere molestie, massa augue laoreet augue, a placerat dui tortor sed ante. In facilisis blandit neque quis luctus. Vestibulum lacinia velit in odio blandit placerat. Proin quis eleifend ex, commodo pellentesque lectus. Cras dignissim massa sed urna pellentesque posuere vitae non leo. Integer eleifend erat tellus, nec viverra orci lobortis vitae. Morbi sollicitudin turpis non odio suscipit, ac interdum ipsum volutpat. Aliquam lacinia volutpat mi. Pellentesque volutpat tempus nisl, eu varius erat. Quisque ac condimentum diam, sed laoreet libero. Suspendisse consectetur euismod blandit. Suspendisse feugiat aliquet lectus, sit amet varius tellus ornare id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed tellus scelerisque, porta nibh nec, vestibulum tortor.</p>
+
+
+<p class="about-me-text">Sed tellus purus, semper sed vehicula id, auctor sit amet massa. Praesent elementum enim nulla, eget tempus velit iaculis vel. Donec vel luctus purus, in sollicitudin sapien. Mauris augue neque, sodales porttitor rutrum at, elementum id augue. Praesent eget magna vitae dolor iaculis luctus id vitae magna. Morbi semper molestie condimentum. Vivamus sit amet metus nisi. Phasellus at sollicitudin sem, id fermentum dui. Aliquam posuere mi vitae dui scelerisque gravida. Nullam vel tortor orci. Cras ut urna ut metus tempor ullamcorper sit amet eu ante. Curabitur turpis velit, tempus quis sapien quis, molestie tincidunt sem. Donec at suscipit est. Nullam non mi in sem tempus porta a in nisl. </p>
+
+<p class="about-me-text">Sed euismod viverra vehicula. Curabitur eu erat iaculis erat mattis cursus vitae a metus. Etiam lacinia gravida lectus non interdum. Curabitur mollis elit in gravida consequat. Curabitur cursus turpis a dictum porta. Curabitur iaculis ultrices dui, ut suscipit urna sodales sed. Cras et augue vel eros suscipit ornare pretium a sem. Pellentesque commodo leo purus. Phasellus nec purus ac arcu faucibus porta. Donec fermentum eros sed nulla aliquet, vel eleifend nisl tristique. Maecenas imperdiet quis justo nec luctus. Donec et urna fermentum, finibus sem eu, luctus tortor. Aenean lectus sapien, ullamcorper eget tempus nec, vulputate non velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin egestas lectus et odio laoreet auctor.</p>
+</div class="about-me-text">
+
+<a href="{% url 'post_list' %}" id="blog-invitation">Check out my blog :)</a>
+
+{% endblock %}

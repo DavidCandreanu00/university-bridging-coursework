@@ -33,7 +33,10 @@ body {
     position: fixed;
     top:0;
     width: 100%;
-    z-index: 10 
+    z-index: 20;
+    -webkit-box-shadow: 4px 5px 35px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 5px 35px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 5px 35px 0px rgba(0,0,0,0.75);
 }
 
 .form_title{
@@ -93,9 +96,10 @@ body {
 }
 
 .content-container {
+    text-align: center;
     margin-left: 25%;
-    margin-right: 0%;
     margin-top: 150px;
+
 }
 
 .save {
@@ -118,7 +122,22 @@ body {
     text-decoration: none;
 }
 
-#edit-button, #add-post-button, #lock-item{
+#blog-invitation, #blog-invitation:visited{
+    color: #03DAC6;
+    font-family: 'Open Sans';
+    padding-bottom: 30px;
+    font-size: 18px;
+}
+
+#blog-invitation:hover{
+    color: #02ae9e;
+    text-decoration: none;
+    font-family: 'Open Sans';
+}
+
+
+
+#edit-button, #add-post-button, #lock-item, #home-button{
     margin-top: 25px;
     font-size: 26pt;
     float: right;
@@ -186,5 +205,21 @@ body {
 #comments-number{
     color: #02ae9e;
 }
+
+.about-me-text {
+    color: #fff;
+    font-family: 'Open Sans';
+    text-align: left;
+}
+
+.aboutme-image{
+
+    max-width: 40%;   
+    height: auto;
+    margin-bottom: 10%;
+    padding-top: 5%;
+
+}
 /* Title animation -------------------------------*/ 
+
 
