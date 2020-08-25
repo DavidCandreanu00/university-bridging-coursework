@@ -237,28 +237,69 @@ body {
     width:50%;
 }
 
+.animation-container {
+  display: flex;
+  font-family: 'Recursive';
+  color: #03DAC6;
+  min-height: 120px;
+  text-align: left;
+}
+
 @media screen and (max-width:800px) {
   .content-container {
     width: 80%; 
+    padding-top: 15%;
   }
 
   .aboutme-image{
     max-width: 40%;
-    padding-top:10%;
   }
 }
 
 @media screen and (max-width:620px) {
   .aboutme-image{
     max-width: 70% ;
-    padding-top:20%;
+  }
+
+  .content-container{
+    padding-top: 0%;
+    margin-top: 60%;
+  }
+
+  .page-header{
+    margin-bottom: 50%;
   }
 
 }
 
 @media screen and (max-width:470px) {
-  .animation-container{
-    min-height:180px;
+  .animation-container {
+  display: flex;
+  font-family: 'Recursive';
+  color: #03DAC6;
+  min-height: 180px;
+  text-align: left;
+}
+
+.content-container{
+    margin-top:60%;
+  }
+
+  #website-title{
+    display:none;
+  }
+
+  #edit-button, #add-post-button, #lock-item, #home-button, .blog-icon {
+    /*float: none;*/
+
+  }
+
+  .page-header{
+    text-align: center;
+  }
+
+  #user-details{
+    font-size: 5vw;
   }
 
 }
